@@ -1,9 +1,14 @@
 import React, { createContext } from "react";
 
 
-const UserContext = createContext()
+export const UserContext = createContext({
+    greeting: 'Hello',
+    changeGreeting: (data) => {
+        greeting = data
+    },
+})
 
-const Wrapper = (props) => {
+export const Wrapper = (props) => {
 
     const greeting = "Hello"
   
@@ -13,4 +18,3 @@ const Wrapper = (props) => {
         </UserContext.Provider>
     )
 }
-export { Wrapper, UserContext }
